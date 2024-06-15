@@ -1,0 +1,38 @@
+.btn {
+  display: block;
+  width: 200px;
+  padding: 5px 13px;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+  border-radius: 3px;
+  &__primary {
+    background-color: $color-link;
+    color: #fff;
+    border: 1px solid #AD8718;
+    &:hover {
+      background-color: $color-link-hover;
+      color: #fff;
+    }
+  }
+  &__secondary {
+    color: #fff;
+    border: 1px solid #fff;
+    text-transform: uppercase;
+    &:hover {
+      color: #fff
+    }
+  }
+}
+
+.button {
+  border-color: $color-link;
+  &--primary {
+    border-color: $color-link;
+    background-color: $color-link;
+    &:hover {
+      border-color: $color-link;
+      background-color: $color-link-hover;
+    }
+  }
+}

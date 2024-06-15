@@ -1,0 +1,97 @@
+{%
+  set wrapper_classes = [
+  'card'
+]
+%}
+
+{% if classes|default %}
+  {% set wrapper_classes = wrapper_classes|merge(classes) %}
+{% endif %}
+
+{% if display == 'slider' %}
+  {% set wrapper_classes = wrapper_classes|merge(['card--slider']) %}
+{% endif %}
+
+{% if display == 'teaser' %}
+  {% set wrapper_classes = wrapper_classes|merge(['card--teaser']) %}
+{% endif %}
+
+{% if display == 'list_full' %}
+  {% set wrapper_classes = wrapper_classes|merge(['card--list_full']) %}
+{% endif %}
+
+{% set attributes = create_attribute() %}
+<div{{ attributes.addClass(wrapper_classes) }}>
+  {% if display != 'download' %}
+  <a href="{{ url }}" rel="bookmark">
+    {% endif %}
+    {% if image_url is not empty %}
+      {% if display == 'download' %}
+        <a href="{{ url }}" rel="bookmark">
+      {% endif %}
+      <div class="card__image">
+        <img src="{{ image_url|image_style('large_16_9') }}" alt="{{ image_alt }}" class="lazy">
+      </div>
+      {% if display == 'download' %}
+        </a>
+      {% endif %}
+    {% else %}
+      <div class="card__image">
+        <img src="{{ active_theme_path() ~ '/img/placeholder-square-sm.jpg' }}" alt="Westfield Pipe & Fittings" class="lazy">
+      </div>
+    {% endif %}
+
+    <div class="card__content">
+      {% if date %}
+        <div class="card__date">
+          <div class="icon-group">
+            <span class="icon--calendar"></span>
+            <span>{{ date }}</span>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if categories is not empty %}
+        <div class="card__category">
+          {% for category in categories %}
+            <div class="pill pill--sm">{{ category }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% if title %}
+      {% if title_tag is empty %}
+        {% set title_tag = 'h3' %}
+      {% endif %}
+      <{{ title_tag }} class="card__title heading--h6">
+      {{ title }}
+    </{{ title_tag }}>
+    {% endif %}
+
+    {% if description %}
+      <div class="card__description">
+        {{ description|raw }}
+      </div>
+    {% endif %}
+
+    <div class="card__link">
+      {% if display == 'download' %}
+        <div class="icon-group">
+          <a href="{{ url }}" class="icon icon--circle-gradient icon--download"><span class="visually-hidden">Download</span></a>
+          <a href="{{ url }}" class="icon icon--circle-gradient icon--share"><span class="visually-hidden">Share</span></a>
+          <a href="{{ url }}" class="icon icon--circle-gradient icon--email"><span class="visually-hidden">Email</span></a>
+        </div>
+      {% endif %}
+      {% if cta %}
+        {% if display == 'download' %}
+          <a href="{{ url }}" class="button--chevron">{{ cta }}</a>
+        {% else %}
+          <span class="button--chevron">{{ cta }}</span>
+        {% endif %}
+      {% endif %}
+    </div>
+</div>
+{% if display != 'download' %}
+  </a>
+{% endif %}
+</div>

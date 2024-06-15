@@ -1,0 +1,52 @@
+{#
+/**
+ * Template for article list-full.
+ *
+ * Custom variables:
+ * - view_mode: Attributes for the page tag.
+ * - article_category: Taxonomy terms of articles categories.
+ *
+ * @see zena_zradlo_preprocess_node()
+ */
+#}
+
+{%
+  set classes = [
+  'node',
+  view_mode ? 'node--' ~ view_mode|clean_class,
+]
+%}
+
+<article{{ attributes.addClass(classes) }}>
+  <header>
+    {% if display_submitted %}
+      {%
+      include '@zena_zradlo/components/meta-data.twig' with {
+        'author': author_name,
+        'date': date,
+        'category': article_category,
+        'comment_count': comment_count,
+        'metadata': metadata
+      } only
+      %}
+    {% endif %}
+    {% if label and not page %}
+      <h2{{ title_attributes.addClass('node__title') }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h2>
+      <span class="content-separator"></span>
+    {% endif %}
+    {{ title_suffix }}
+  </header>
+  <div{{ content_attributes.addClass('node__content', layout) }}>
+    <div class="node__image">{{ content.field_image }}</div>
+    <div class="node__intro">{{ content.field_intro }}</div>
+  </div>
+  {%
+   include '@zena_zradlo/components/btn.html.twig' with {
+    'url': node_url,
+    'class': 'btn__primary',
+    'cta': 'Continue reading'
+  } only
+   %}
+</article>

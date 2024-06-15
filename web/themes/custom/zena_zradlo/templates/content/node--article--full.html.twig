@@ -1,0 +1,35 @@
+{%
+  set classes = [
+  'node',
+  view_mode ? 'node--' ~ view_mode|clean_class,
+]
+%}
+
+<article>
+  {%
+   include '@zena_zradlo/components/meta-data.twig' with {
+    'author': author_name,
+    'date': date,
+    'category': article_category,
+    'comment_count': comment_count,
+  } only
+  %}
+  {{ title_prefix }}
+    <h2{{ title_attributes.addClass('node__title') }}>
+      {{ node.title.value }}
+    </h2>
+  {{ title_suffix }}
+
+
+  {{ content.field_image }}
+  {{ content.body }}
+  {{ content.field_featured_asset }}
+  {{ content.field_tags }}
+  {{ drupal_view('navigation_article', 'attachment_1') }}
+  {{ drupal_block('plugin_id') }}
+  <div class="related-articles">
+    <span>{{ 'Related articles'|t }}</span>
+    {{ drupal_view('related_article', 'block') }}
+  </div>
+  {{ content.comment }}
+</article>

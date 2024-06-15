@@ -1,0 +1,26 @@
+<div class="meta-data">
+  <span{{ author_attributes }}>
+    {{ 'By'|t }} {% apply spaceless %}{{ author }}{% endapply %}
+  </span>
+  <span class="meta-data__date">
+    <svg xmlns="http://www.w3.org/2000/svg" height="10" width="10" viewBox="0 0 512 512" fill="#ccc"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"/></svg>
+    <p>{{ date }}</p>
+  </span>
+  {% if category %}
+    <span class="meta-data__category">
+      <svg xmlns="http://www.w3.org/2000/svg" height="10" width="10" viewBox="0 0 512 512" fill="#ccc"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"/></svg>
+      <p>{{ category }}</p>
+    </span>
+  {% endif %}
+  {% if comment_count %}
+    <span class="meta-data__comment">
+      <svg xmlns="http://www.w3.org/2000/svg" height="10" width="10" viewBox="0 0 512 512" fill="#ccc"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"/></svg>
+      <p>{{ comment_count }}</p>
+    </span>
+  {% else %}
+    <span class="meta-data__comment">
+      <svg xmlns="http://www.w3.org/2000/svg" height="10" width="10" viewBox="0 0 512 512" fill="#ccc"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"/></svg>
+      <p>{{ 'No comments'|t }}</p>
+    </span>
+  {% endif %}
+</div>

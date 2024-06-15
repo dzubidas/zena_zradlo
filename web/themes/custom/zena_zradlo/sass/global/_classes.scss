@@ -1,0 +1,38 @@
+.hidden {
+  display: none;
+}
+
+.hide-on-mobile {
+  @include mq($mobile-md, down) {
+    display: none !important;
+  }
+}
+.hide-on-tablet {
+  @include mq($tablet-sm, down) {
+    display: none !important;
+  }
+}
+.show-on-tablet {
+  @include mq($tablet-sm) {
+    display: none !important;
+  }
+}
+.show-on-mobile {
+  @include mq($mobile-md) {
+    display: none !important;
+  }
+}
+
+.align-left {
+  text-align: left;
+}
+.align-right {
+  text-align: right;
+}
+.align-center {
+  text-align: center;
+}
+
+.bg-primary {
+  background-color: $bg-purple;
+}

@@ -1,0 +1,146 @@
+{#
+/**
+ * Default page template.
+ *
+ * Custom variables:
+ * - view_mode: Node display mode
+ *
+ */
+#}
+{#<div id="page-wrapper" class="page-wrapper">#}
+{#  <header class="header full-width " role="banner">#}
+{#    <div class="header__container">#}
+{#      <div class="header__left hide-on-mobile">#}
+{#        {{ page.navigation }}#}
+{#      </div>#}
+{#      <div class="header__center show-on-mobile">#}
+{#        <div id="menu-toggle" class="menu__toggle">#}
+{#          <span>☰</span>#}
+{#        </div>#}
+{#      </div>#}
+{#      <div class="header__right hide-on-tablet">#}
+{#        {{ drupal_menu('socials') }}#}
+{#        <div class="header__right--search">#}
+{#          <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">#}
+{#            <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->#}
+{#            <path#}
+{#              d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/>#}
+{#          </svg>#}
+{#        </div>#}
+{#      </div>#}
+{#    </div>#}
+{#    <div class="header__logo ">#}
+{#      <img src="{{ file_url('themes/custom/zena_zradlo/img/zz.svg') }}" alt="zena & zradlo">#}
+{#    </div>#}
+{#  </header>#}
+
+{#  <div id="main-wrapper" class="layout-main-wrapper layout-container">#}
+{#    <div id="main" class="layout-main">#}
+{#      <div class="main-content">#}
+{#        <div{{ content_attributes.addClass('container') }}>#}
+{#          <div class="drupal-view">#}
+{#            {{ drupal_view('slideshow', 'block') }}#}
+{#          </div>#}
+{#          <div class="drupal-view">#}
+{#            {{ drupal_view('trending_article', 'block') }}#}
+{#          </div>#}
+{#        </div>#}
+{#        {% if page.sidebar %}#}
+{#          <div class="sidebar-grid">#}
+{#            <main role="main" class="site-main">#}
+{#              {{ page.content }}#}
+{#            </main>#}
+
+{#            {{ page.sidebar }}#}
+{#          </div>#}
+{#        {% else %}#}
+{#          <main role="main">#}
+{#            {{ page.content }}#}
+{#          </main>#}
+{#        {% endif %}#}
+{#      </div>#}
+{#    </div>#}
+{#  </div>#}
+
+{#  <footer class="footer" role="contentinfo">#}
+{#    {{ page.footer }}#}
+{#  </footer>#}
+{#</div>#}
+
+
+<div class="container">
+  {% if page.primary_menu or page.secondary_menu %}
+    <header id="header" class="site-header full-width" data-drupal-selector="site-header" role="banner">
+
+      {# Gets fixed by JavaScript at wide widths. #}
+      <div class="site-header__fixable" data-drupal-selector="site-header-fixable">
+        <div class="site-header__initial">
+          <button class="sticky-header-toggle" data-drupal-selector="sticky-header-toggle" role="switch" aria-controls="site-header__inner" aria-label="{{ 'Sticky header'|t }}" aria-checked="false">
+            <span class="sticky-header-toggle__icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+        </div>
+
+        {# Needs to extend full width so box shadow will also extend. #}
+        <div id="site-header__inner" class="site-header__inner" data-drupal-selector="site-header-inner">
+          <div class="container site-header__inner__container">
+            {% if page.primary_menu or page.secondary_menu %}
+              <div class="mobile-buttons" data-drupal-selector="mobile-buttons">
+                <button class="mobile-nav-button" data-drupal-selector="mobile-nav-button" aria-label="{{ 'Main Menu'|t }}" aria-controls="header-nav" aria-expanded="false">
+                  <span class="mobile-nav-button__label">{{ 'Menu'|t }}</span>
+                  <span class="mobile-nav-button__icon"></span>
+                </button>
+              </div>
+              {# Main navigation and Social navigation #}
+              <div id="header-nav" class="header-nav" data-drupal-selector="header-nav">
+                {{ page.primary_menu }}
+                {{ page.secondary_menu }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </header>
+  {% endif %}
+
+  <div id="main-wrapper" class="layout-main-wrapper layout-container">
+    <div id="main" class="layout-main">
+      <div class="main-content">
+        <a id="main-content" tabindex="-1"></a>
+        {{ page.hero }}
+        <div class="main-content__container">
+          <div class="header__logo ">
+            <img src="{{ file_url('themes/custom/zena_zradlo/img/zz.svg') }}" alt="zena & zradlo">
+          </div>
+          {{ drupal_view('slideshow', 'block') }}
+          {{ drupal_view('trending_article', 'block') }}
+          {% if page.sidebar %}
+            <div class="sidebar-grid grid-full">
+              <main role="main" class="site-main">
+                {{ page.content }}
+              </main>
+
+              {{ page.sidebar }}
+            </div>
+          {% else %}
+            <main role="main">
+              {{ page.content_above }}
+              {{ page.content }}
+            </main>
+          {% endif %}
+          {{ page.content_below }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner container">
+      {{ page.footer_top }}
+      {{ page.footer_bottom }}
+    </div>
+  </footer>
+</div>

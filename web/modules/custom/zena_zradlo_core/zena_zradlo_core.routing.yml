@@ -1,0 +1,7 @@
+zena_zradlo_core.component_library:
+  path: '/component-library'
+  defaults:
+    _controller: '\Drupal\zena_zradlo_core\Controller\ComponentLibraryController::content'
+    _title: 'Component Library'
+  requirements:
+    _permission: 'administer site configuration'

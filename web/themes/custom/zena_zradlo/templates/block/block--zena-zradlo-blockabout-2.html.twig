@@ -1,0 +1,12 @@
+<div{{ attributes.addClass(classes) }}>
+  {% if label %}
+    <h2{{ title_attributes.addClass('block__title') }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    <div{{ content_attributes.addClass('block__content') }}>
+      {{ content.field_image.0 }}
+      {{ content.body }}
+    </div>
+  {% endblock %}
+</div>

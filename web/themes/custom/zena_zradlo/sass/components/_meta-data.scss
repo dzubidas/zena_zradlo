@@ -1,0 +1,24 @@
+.meta-data {
+  //width: 60%;
+  //height: 20px;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 11px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  a {
+    font-weight: 100;
+  }
+  > span {
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+
+    p {
+      margin-left: 10px;
+    }
+  }
+}

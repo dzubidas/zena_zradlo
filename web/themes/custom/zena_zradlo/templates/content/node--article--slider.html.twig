@@ -1,0 +1,43 @@
+{#
+/**
+ * Template for article slider.
+ *
+ * Custom variables:
+ * - view_mode: Attributes for the page tag.
+ * - show_in_carousel: Boolean value if article is displayed in carousel.
+ *
+ * @see zena_zradlo_preprocess_node()
+ */
+#}
+{%
+  set classes = [
+  'node',
+  view_mode ? 'node--' ~ view_mode|clean_class,
+]
+%}
+<article{{ attributes.addClass(classes) }}>
+  <header class="node__header">
+    {{ title_prefix }}
+    {% if label and not page %}
+      <h2{{ title_attributes.addClass('node__title') }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h2>
+    {% endif %}
+    {{ title_suffix }}
+    <div class="node__intro">
+      {{ content.field_intro }}
+    </div>
+    {%
+      include '@zena_zradlo/components/btn.html.twig' with {
+      'url': url,
+      'class': 'btn__secondary',
+      'cta': 'Read more'
+    } only
+    %}
+  </header>
+  <div{{ content_attributes.addClass('node__content', layout) }}>
+    <div class="node__img">
+      {{ content.field_image }}
+    </div>
+  </div>
+</article>

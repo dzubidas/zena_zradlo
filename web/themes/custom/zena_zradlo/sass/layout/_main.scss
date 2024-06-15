@@ -1,0 +1,8 @@
+#main-wrapper {
+  .main-content__container {
+    padding-block-start: 0;
+    @include mq($mobile-lg, up) {
+      padding-block-start: 0;
+    }
+  }
+}

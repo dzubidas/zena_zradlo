@@ -1,0 +1,13 @@
+global_styling:
+  version: VERSION
+  css:
+    theme:
+      //https://fonts.googleapis.com/css2?family=Whisper&display=swap: { type: external }
+      css/style.css: {}
+      https://use.fontawesome.com/releases/v5.8.2/css/all.css: { type: external, minified: true }
+  js:
+    js/src/index.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once

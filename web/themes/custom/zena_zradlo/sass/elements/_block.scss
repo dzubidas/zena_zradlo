@@ -1,0 +1,62 @@
+.block__title {
+  text-align: center;
+  font-family: Playfair Display;
+  font-family: $font-default;
+  font-size: 12px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #333;
+  &::before {
+    content: "";
+    display: block;
+    width: 60px;
+    position: relative;
+    border-top: 1px solid #eee;
+    top: 10px;
+  }
+  &::after {
+    content: "";
+    display: block;
+    width: 60px;
+    position: relative;
+    border-top: 1px solid #eee;
+    top: -9px;
+    left: 72%;
+  }
+}
+
+.block__content {
+  .text-content p {
+    font-size: 14px;
+    line-height: 19px;
+    padding: 12px 0;
+  }
+  .form-item {
+    float: none;
+    margin-right: 0;
+  }
+  label[for="edit-search-api-fulltext"] {
+    display: none;
+  }
+#edit-submit-search {
+  display: none;
+}
+}
+
+#block-zena-zradlo-aboutbloger {
+  border: 1px solid #aaa;
+  padding: 1rem;
+  .block__content {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+
+    .text-content.clearfix.field.field--name-body.field--type-text-with-summary.field--label-hidden.field__item p {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      padding-top: 0;
+      margin-top: 0;
+    }
+  }
+}

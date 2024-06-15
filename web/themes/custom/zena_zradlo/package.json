@@ -1,0 +1,17 @@
+{
+  "name": "zena_zradlo",
+  "version": "1.0.0",
+  "description": "Base Zena & Zradlo theme.",
+  "scripts": {
+    "watch": "node node_modules/gulp/bin/gulp.js serve",
+    "sass": "node node_modules/gulp/bin/gulp.js sass",
+    "js": "node node_modules/gulp/bin/gulp.js js"
+  },
+  "author": "Majky",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.71.1"
+  }
+}

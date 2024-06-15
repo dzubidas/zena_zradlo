@@ -1,0 +1,8 @@
+name: 'Zena Zradlo Core'
+type: module
+description: 'Generic module for minor customizations.'
+core_version_requirement: ^10
+package: 'Zena&Zradlo'
+dependencies:
+  - drupal:media_library
+  - drupal:options

@@ -1,0 +1,38 @@
+<h1>Heloo</h1>
+
+
+<div class="p-md">
+  <h3 class="heading--bb">Card Component</h3>
+  <div class="grid grid--gutters">
+    <div class="grid__item">
+      {%
+        include '@zena_zradlo/components/card.html.twig' with {
+        'classes': ['custom-class'],
+        'url': '#',
+        'image_url': 'http://localhost:32779/sites/default/files/styles/large/public/2024-03/mister-french-linen-vacation-shirt-pool.jpg?itok=B6Odj9x7',
+        'image_alt': 'Slider',
+        'title': 'Card Title Slider',
+        'description': 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.',
+        'categories': ['Category 1'],
+        'cta': 'View Details'
+      } only
+      %}
+    </div>
+  </div>
+</div>
+
+<div class="p-md">
+  <h3 class="heading--bb">Card Component</h3>
+  <div class="grid grid--gutters">
+    <div class="grid__item">
+      {%
+        include '@zena_zradlo/components/meta-data.twig' with {
+        'author': 'Majky',
+        'date': '31.5.1991',
+        'category': 'technology',
+        'comment_count': '25',
+      } only
+      %}
+    </div>
+  </div>
+</div>

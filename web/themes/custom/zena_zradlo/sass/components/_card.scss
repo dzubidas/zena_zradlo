@@ -1,0 +1,18 @@
+.card--slider {
+  background-color: #bada;
+}
+
+.contextual-region.node--teaser {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.node__meta i {
+  font-size: 11px;
+  color: #999;
+}
+
+.primary-nav__menu-link-inner::after {
+  display: none;
+}

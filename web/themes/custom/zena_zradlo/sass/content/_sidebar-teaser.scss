@@ -1,0 +1,13 @@
+.node--sidebar-teaser {
+  display: flex;
+  gap: 1rem;
+  .node__content {
+    padding-block-end: 0;
+    .node__meta {
+      margin: 0;
+    }
+  }
+  h3 {
+    text-align: left;
+  }
+}

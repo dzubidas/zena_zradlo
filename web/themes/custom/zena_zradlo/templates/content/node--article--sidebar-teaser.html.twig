@@ -1,0 +1,26 @@
+{%
+  set classes = [
+  'node',
+  view_mode ? 'node--' ~ view_mode|clean_class,
+]
+%}
+
+{{ title_prefix }}
+{{ title_suffix }}
+<article{{ attributes.addClass(classes) }}>
+  {% if label and not page %}
+    <div class="node__img">
+      {{ content.field_image }}
+    </div>
+  {% endif %}
+  {% if display_submitted %}
+    <div class="node__content">
+      <h3{{ title_attributes.addClass('node__title') }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h3>
+      <div class="node__meta">
+        <i>{{ 'On'|t }} {% apply spaceless %}{% endapply %} {{ date }}</i>
+      </div>
+    </div>
+  {% endif %}
+</article>

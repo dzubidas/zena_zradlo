@@ -1,0 +1,24 @@
+name: Zena_Zradlo
+type: theme
+base theme: olivero
+description: 'Theme for blog Zena & Zradlo'
+package: custom
+version: 1.0.0
+core_version_requirement: ^9 || ^10
+logo: logo.svg
+
+libraries:
+  - zena_zradlo/global_styling
+
+regions:
+  branding: 'Branding'
+#  navigation: 'Navigation'
+  primary_menu: Primary menu
+  secondary_menu: Secondary menu
+  highlighted: Highlighted
+#  sidebar: 'Sidebar right'
+  content: 'Content'
+  sidebar: Sidebar
+#  footer: 'Footer'
+  footer_top: Footer Top
+  footer_bottom: Footer Bottom

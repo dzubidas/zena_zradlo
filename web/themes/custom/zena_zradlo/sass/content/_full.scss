@@ -1,0 +1,18 @@
+.text-content blockquote::after, .cke_editable blockquote::after {
+  background: #aaa;
+}
+
+.text-content blockquote::before, .cke_editable blockquote::before {
+  color: $color-link;
+}
+
+.field--tags__item a {
+  color: $color-link;
+}
+#edit-preview {
+  display: none;
+}
+
+.form-item__label.form-required::after, .fieldset__label.form-required::after, .required-mark::after {
+  background-image: none;
+}

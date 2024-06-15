@@ -1,0 +1,65 @@
+/**
+ * This will handle most base elements. There shouldn't be class selectors.
+ * More complex elements may be handled in a specific component like
+ * forms, lists, and tables.
+ */
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body{
+  background-color: $bg-color;
+  background-image: none;
+  font-family: $font-default;
+  font-weight: $font-weight--light;
+  padding: 0;
+  margin: 0 auto;
+
+  &:not(.is-always-mobile-nav) .header-nav {
+    background-color: $bg-color;
+    @include mq($tablet-lg, up) {
+      height: 70px;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $color-nav;
+  &:hover {
+    color: $color-link-hover !important;
+    text-decoration: none;
+  }
+  &::before {
+    display: none;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+#gin-toolbar-bar {
+  @media (max-width: 400px) {
+    max-width: 400px;
+  }
+}
+
+[dir="ltr"] .gin-back-to-admin {
+  @media (max-width: 400px) {
+    white-space: break-spaces;
+  }
+}

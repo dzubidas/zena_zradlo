@@ -1,0 +1,13 @@
+.primary-nav__menu-link {
+  font-weight: $font-weight--light;
+  font-size: 11px;
+  color: $color-link;
+  @include mq($tablet-md, up) {
+    font-size: 11px;
+  }
+}
+
+.secondary-nav__menu-link {
+  font-weight: $font-weight--light;
+  color: $color-link;
+}

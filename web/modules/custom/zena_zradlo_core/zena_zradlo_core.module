@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function zena_zradlo_core_theme($existing, $type, $theme, $path) {
+  return [
+    /* Needed this empty declaration of variables for this to work. */
+    'component_library_page' => [
+      'variables' => ['empty' => NULL],
+    ],
+  ];
+}

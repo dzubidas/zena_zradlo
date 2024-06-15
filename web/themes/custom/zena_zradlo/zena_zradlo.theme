@@ -1,0 +1,33 @@
+<?php
+
+use \Drupal\taxonomy\Entity\Term;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_preprocess_HOOK() for node templates.
+ */
+function zena_zradlo_preprocess_node(&$variables) {
+
+  $node = $variables['node'];
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+  $variables['node_url'] = $node->toUrl()->toString();
+  $variables['show_in_carousel'] = $node->get('field_show_in_carousel')->getValue();
+
+  if ($node instanceof NodeInterface && $node->getType() == 'article') {
+    $category_field = $node->get('field_article_category')->getValue();
+
+    if (!empty($category_field)) {
+      $term_id =$category_field[0]['target_id'];
+      $term = Term::load($term_id);
+
+      if ($term) {
+        $variables['article_category'] = $term->getName();
+      }
+    }
+
+    if (\Drupal::moduleHandler()->moduleExists('comment') && $node->hasField('comment')) {
+      $comment_count = $node->get('comment')->comment_count;
+      $variables['comment_count'] = $comment_count;
+    }
+  }
+}

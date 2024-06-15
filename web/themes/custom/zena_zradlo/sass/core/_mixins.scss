@@ -1,0 +1,11 @@
+@mixin mq($size, $direction: up) {
+  @if $direction == up {
+    @media (min-width: $size) {
+      @content;
+    }
+  } @else if $direction == down {
+    @media (max-width: ($size - 1)) {
+      @content;
+    }
+  }
+}

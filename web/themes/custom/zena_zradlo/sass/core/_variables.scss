@@ -1,0 +1,59 @@
+// Backgrounds
+$bg-color: #fffdfb;
+$bg-purple: #bada;
+$bg-footer: #F3F3F3;
+
+// Colors
+$color-link: #AD8718;
+$color-link-hover: darken($color-link, 20%);
+$color-nav: #333;
+
+// Fonts
+$font-default: 'Playfair Display', sans-serif;
+$font-secondary: Verdana, sans-serif;
+$font-size: 1.6rem; // 16px
+$font-size-xxs: 1.2rem; // 12px
+$font-size-xs: 1.4rem; // 14px
+$font-size-md: 2rem; // 20px
+$font-size-lg: 2.4rem; // 24px
+$font-size-xl: 3.2rem; // 32px
+$font-weight--light: 100;
+$font-weight--normal: 400;
+$font-weight--bold: 500;
+
+
+// Media Breakpoints
+$mobile-xxs: 320px;
+$mobile-xs: 375px;
+$mobile-sm: 414px;
+$mobile-md: 480px;
+$mobile-lg: 667px;
+$tablet-sm: 768px;
+$tablet-md: 992px;
+$tablet-lg: 1024px;
+$desktop-xs: 1080px;
+$desktop-sm: 1280px;
+$desktop-md: 1440px;
+$desktop-lg: 1680px;
+$desktop-xl: 1920px;
+
+// Container Widths
+$width-xxs: 320px;
+$width-xs: 450px;
+$width-sm: 600px;
+$width-md: 1000px;
+$width-lg: 1280px;
+$width-xl: 1376px;
+$width-xxl: 1600px;
+
+// Margins
+$mb-xs: 1rem;
+$mb-s: 2rem;
+$mb-m: 3rem;
+$mb-l: 4rem;
+$mb-xl: 5rem;
+$mb-xxl: 10rem;
+
+// Paths
+$img: '../img';
+$fonts: '../fonts';

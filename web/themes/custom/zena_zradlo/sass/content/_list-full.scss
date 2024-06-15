@@ -1,0 +1,17 @@
+.node--list-full {
+  margin-bottom: $mb-m;
+  .content-separator {
+    display: block;
+    height: 4px;
+    width: 50px;
+    background: #333;
+    margin: 10px auto 30px;
+  }
+  .node__image {
+    margin-bottom: 1rem;
+  }
+  .node__intro {
+    font-size: 14px;
+    text-align: center;
+  }
+}

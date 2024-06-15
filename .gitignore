@@ -1,0 +1,79 @@
+# gitignore template for Drupal 9 projects
+# earlier versions of Drupal are tracked in `community/PHP/`
+/web/themes/contrib
+/web/modules/contrib
+/web/profiles/contrib
+/web/libraries
+
+# Ignore configuration files that may contain sensitive information
+/web/sites/*/*settings*.php
+/web/sites/*/*services*.yml
+!/web/sites/default/settings.php
+
+# Ignore paths that may contain user-generated content
+/web/sites/*/files
+/private
+
+# Ignore paths that may contain temporary files
+/web/sites/*/translations
+/web/sites/*/tmp
+/web/sites/*/cache
+
+# Resi composer install
+/vendor
+/web/core
+
+# Ignore IDE, lando files and apple specific
+/.idea/
+/.vscode/
+*.iml
+*.code-workspace
+.lando.yml
+adminer.php
+/*.sql.gz
+*.DS_Store
+
+# Ignore all log and cert files
+*.log
+*.pem
+
+# Ignore node modules
+node_modules
+
+# Ignore DBs backups
+/db
+
+# Ignore some css related stuff
+*.css.map
+*.css.map.map
+
+# Ignore default text and exmple files
+web/sites/*example*
+web/CHANGELOG.txt
+web/COPYRIGHT.txt
+web/INSTALL*.txt
+web/LICENSE.txt
+web/MAINTAINERS.txt
+web/UPGRADE.txt
+web/README.txt
+web/sites/README.txt
+web/sites/all/modules/README.txt
+web/sites/all/themes/README.txt
+
+# Default files
+!/web/sites/default/files/
+/web/sites/default/files/*/*
+/web/sites/default/files/*
+web/sites/default/binary_www_old/*/*
+migrace/mappings/*
+migrace/node/*
+migrace/menu/*
+
+# Include few binaries
+!/web/sites/*/files/favicon.ico
+!/web/sites/*/files/logo.png
+
+# symlinks
+/www
+.user.ini
+.phpversion

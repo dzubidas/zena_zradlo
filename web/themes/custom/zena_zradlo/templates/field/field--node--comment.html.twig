@@ -1,0 +1,33 @@
+<style>
+  .filter-wrapper {
+    display: none;
+  }
+</style>
+<section{{ attributes.setAttribute('data-drupal-selector', 'comments').addClass('comments') }}>
+
+  {% if not label_hidden %}
+    {{ title_prefix }}
+    <h2{{ title_attributes.addClass('comments__title') }}>
+      {{ 'Leave a reply' }}
+    </h2>
+    {{ title_suffix }}
+  {% endif %}
+
+  {% if comment_form %}
+    <div class="add-comment">
+      {% if user_picture %}
+        <div class="add-comment__picture-wrapper">
+          <div class="add-comment__picture">
+            {{ user_picture }}
+          </div>
+        </div>
+      {% endif %}
+      <div class="add-comment__form">
+        {{ comment_form }}
+      </div>
+    </div>
+  {% endif %}
+
+  {{ comments }}
+
+</section>
